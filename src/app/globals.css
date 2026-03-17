@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Kiza Brand Colors */
+    --kiza-gold: 42 55% 52%;
+    --kiza-purple: 264 100% 51%;
+    --kiza-cyan: 193 100% 50%;
+    --kiza-dark-blue: 243 100% 15%;
+
+    --background: 243 100% 15%;
+    --foreground: 0 0% 100%;
+    --card: 243 80% 18%;
+    --card-foreground: 0 0% 100%;
+    --popover: 243 80% 18%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 42 55% 52%;
+    --primary-foreground: 243 100% 15%;
+    --secondary: 243 60% 22%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 243 50% 25%;
+    --muted-foreground: 240 10% 70%;
+    --accent: 264 100% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 243 40% 25%;
+    --input: 243 40% 25%;
+    --ring: 42 55% 52%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Sora', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #C89A40 0%, #00ccff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #01004C;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a5c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a6c;
+}
+
+/* Light section styles */
+.section-light {
+  --background: 220 14% 96%;
+  --foreground: 243 100% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 243 100% 15%;
+  --muted-foreground: 243 30% 40%;
+  --border: 243 20% 88%;
+}
+
+/* Glow effects */
+.glow-gold {
+  box-shadow: 0 0 40px rgba(200, 154, 64, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px rgba(96, 7, 255, 0.3);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at top, rgba(96, 7, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom right, rgba(0, 204, 255, 0.1) 0%, transparent 40%);
+}
+
+.bg-gradient-radial-light {
+  background: radial-gradient(ellipse at top left, rgba(0, 204, 255, 0.06) 0%, transparent 45%),
+              radial-gradient(ellipse at bottom right, rgba(96, 7, 255, 0.06) 0%, transparent 45%);
+}
